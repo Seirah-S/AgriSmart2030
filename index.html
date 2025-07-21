@@ -3,36 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Analyze soil health by testing pH, potassium, nitrogen, and phosphorus levels">
     <title>Soil Health Analyzer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center my-4">Soil Health Analyzer</h1>
-        <form id="soil-form">
-            <div class="mb-3">
-                <label for="ph" class="form-label">Soil pH</label>
-                <input type="number" id="ph" class="form-control" required>
+        <header>
+            <h1>Soil Health Analyzer</h1>
+            <p class="subtitle">
+                Enter your soil test results to get a comprehensive health assessment for optimal plant growth
+            </p>
+        </header>
+
+        <main>
+            <form id="soil-form" novalidate>
+                <div class="form-section">
+                    <h2 class="section-title">Soil Parameters</h2>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-group" id="ph-container">
+                                <label for="ph" class="form-label">Soil pH Level</label>
+                                <input type="number" 
+                                       id="ph" 
+                                       class="form-control" 
+                                       min="0" 
+                                       max="14" 
+                                       step="0.1" 
+                                       placeholder="6.5"
+                                       aria-describedby="ph-help"
+                                       required>
+                                <div class="form-text" id="ph-help">
+                                    Optimal range: 6.0 - 7.5 (neutral to slightly acidic)
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="input-group" id="potassium-container">
+                                <label for="potassium" class="form-label">Potassium (K)</label>
+                                <input type="number" 
+                                       id="potassium" 
+                                       class="form-control" 
+                                       min="0" 
+                                       max="1000" 
+                                       step="1" 
+                                       placeholder="300"
+                                       aria-describedby="potassium-help"
+                                       required>
+                                <div class="form-text" id="potassium-help">
+                                    Optimal range: 200 - 400 ppm (supports root development)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-group" id="nitrogen-container">
+                                <label for="nitrogen" class="form-label">Nitrogen (N)</label>
+                                <input type="number" 
+                                       id="nitrogen" 
+                                       class="form-control" 
+                                       min="0" 
+                                       max="200" 
+                                       step="1" 
+                                       placeholder="50"
+                                       aria-describedby="nitrogen-help"
+                                       required>
+                                <div class="form-text" id="nitrogen-help">
+                                    Optimal range: 30 - 70 ppm (promotes leaf growth)
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="input-group" id="phosphorus-container">
+                                <label for="phosphorus" class="form-label">Phosphorus (P)</label>
+                                <input type="number" 
+                                       id="phosphorus" 
+                                       class="form-control" 
+                                       min="0" 
+                                       max="200" 
+                                       step="1" 
+                                       placeholder="35"
+                                       aria-describedby="phosphorus-help"
+                                       required>
+                                <div class="form-text" id="phosphorus-help">
+                                    Optimal range: 20 - 50 ppm (enhances flowering)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn-analyze">
+                        <span class="button-text">Analyze Soil Health</span>
+                    </button>
+                </div>
+            </form>
+
+            <div class="result-container" aria-live="polite">
+                <h3 id="result"></h3>
+                <p class="result-details" id="result-details"></p>
             </div>
-            <div class="mb-3">
-                <label for="potassium" class="form-label">Potassium Level (ppm)</label>
-                <input type="number" id="potassium" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label for="nitrogen" class="form-label">Nitrogen Level (ppm)</label>
-                <input type="number" id="nitrogen" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label for="phosphorus" class="form-label">Phosphorus Level (ppm)</label>
-                <input type="number" id="phosphorus" class="form-control" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Analyze Soil</button>
-        </form>
-        
-        <h3 id="result" class="mt-4"></h3>
+        </main>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
