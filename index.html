@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Analyze soil health by testing pH, potassium, nitrogen, and phosphorus levels">
+    <meta name="description" content="Analyze soil health by testing pH, potassium, nitrogen, phosphorus, organic matter, moisture, rainfall, and tree age">
     <title>Soil Health Analyzer</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -12,14 +12,14 @@
         <header>
             <h1>Soil Health Analyzer</h1>
             <p class="subtitle">
-                Enter your soil test results to get a comprehensive health assessment for optimal plant growth
+                Enter your comprehensive soil test results and environmental data to get a detailed health assessment for optimal plant growth
             </p>
         </header>
 
         <main>
             <form id="soil-form" novalidate>
                 <div class="form-section">
-                    <h2 class="section-title">Soil Parameters</h2>
+                    <h2 class="section-title">Primary Soil Parameters</h2>
                     
                     <div class="row">
                         <div class="col-md-6">
@@ -98,9 +98,89 @@
                     </div>
                 </div>
 
+                <div class="form-section">
+                    <h2 class="section-title">Soil Composition & Environmental Factors</h2>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-group" id="organic-matter-container">
+                                <label for="organic-matter" class="form-label">Organic Matter (%)</label>
+                                <input type="number" 
+                                       id="organic-matter" 
+                                       class="form-control" 
+                                       min="0" 
+                                       max="100" 
+                                       step="0.1" 
+                                       placeholder="3.5"
+                                       aria-describedby="organic-matter-help"
+                                       required>
+                                <div class="form-text" id="organic-matter-help">
+                                    Optimal range: 3 - 6% (improves soil structure and fertility)
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="input-group" id="soil-moisture-container">
+                                <label for="soil-moisture" class="form-label">Soil Moisture (%)</label>
+                                <input type="number" 
+                                       id="soil-moisture" 
+                                       class="form-control" 
+                                       min="0" 
+                                       max="100" 
+                                       step="0.1" 
+                                       placeholder="25"
+                                       aria-describedby="soil-moisture-help"
+                                       required>
+                                <div class="form-text" id="soil-moisture-help">
+                                    Optimal range: 20 - 40% (adequate water availability)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-group" id="rainfall-container">
+                                <label for="rainfall" class="form-label">Annual Rainfall (mm)</label>
+                                <input type="number" 
+                                       id="rainfall" 
+                                       class="form-control" 
+                                       min="0" 
+                                       max="5000" 
+                                       step="1" 
+                                       placeholder="800"
+                                       aria-describedby="rainfall-help"
+                                       required>
+                                <div class="form-text" id="rainfall-help">
+                                    Optimal range: 600 - 1200 mm (sufficient natural irrigation)
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="input-group" id="tree-age-container">
+                                <label for="tree-age" class="form-label">Tree Age (years)</label>
+                                <input type="number" 
+                                       id="tree-age" 
+                                       class="form-control" 
+                                       min="0" 
+                                       max="200" 
+                                       step="1" 
+                                       placeholder="5"
+                                       aria-describedby="tree-age-help"
+                                       required>
+                                <div class="form-text" id="tree-age-help">
+                                    Age affects nutrient requirements and soil depletion patterns
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="text-center">
                     <button type="submit" class="btn-analyze">
-                        <span class="button-text">Analyze Soil Health</span>
+                        <span class="button-text">Analyze Comprehensive Soil Health</span>
                     </button>
                 </div>
             </form>
