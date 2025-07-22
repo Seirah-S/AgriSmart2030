@@ -3,195 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Analyze soil health by testing pH, potassium, nitrogen, phosphorus, organic matter, moisture, rainfall, and tree age">
-    <title>Soil Health Analyzer</title>
+    <meta name="description" content="Professional soil health analysis tool for optimal plant growth and agricultural success">
+    <title>Soil Health Analyzer - Home</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Soil Health Analyzer</h1>
-            <p class="subtitle">
-                Enter your comprehensive soil test results and environmental data to get a detailed health assessment for optimal plant growth
-            </p>
-        </header>
-
-        <main>
-            <form id="soil-form" novalidate>
-                <div class="form-section">
-                    <h2 class="section-title">Primary Soil Parameters</h2>
-                    
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="input-group" id="ph-container">
-                                <label for="ph" class="form-label">Soil pH Level</label>
-                                <input type="number" 
-                                       id="ph" 
-                                       class="form-control" 
-                                       min="0" 
-                                       max="14" 
-                                       step="0.1" 
-                                       placeholder="6.5"
-                                       aria-describedby="ph-help"
-                                       required>
-                                <div class="form-text" id="ph-help">
-                                    Optimal range: 6.0 - 7.5 (neutral to slightly acidic)
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6">
-                            <div class="input-group" id="potassium-container">
-                                <label for="potassium" class="form-label">Potassium (K)</label>
-                                <input type="number" 
-                                       id="potassium" 
-                                       class="form-control" 
-                                       min="0" 
-                                       max="1000" 
-                                       step="1" 
-                                       placeholder="300"
-                                       aria-describedby="potassium-help"
-                                       required>
-                                <div class="form-text" id="potassium-help">
-                                    Optimal range: 200 - 400 ppm (supports root development)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="input-group" id="nitrogen-container">
-                                <label for="nitrogen" class="form-label">Nitrogen (N)</label>
-                                <input type="number" 
-                                       id="nitrogen" 
-                                       class="form-control" 
-                                       min="0" 
-                                       max="200" 
-                                       step="1" 
-                                       placeholder="50"
-                                       aria-describedby="nitrogen-help"
-                                       required>
-                                <div class="form-text" id="nitrogen-help">
-                                    Optimal range: 30 - 70 ppm (promotes leaf growth)
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6">
-                            <div class="input-group" id="phosphorus-container">
-                                <label for="phosphorus" class="form-label">Phosphorus (P)</label>
-                                <input type="number" 
-                                       id="phosphorus" 
-                                       class="form-control" 
-                                       min="0" 
-                                       max="200" 
-                                       step="1" 
-                                       placeholder="35"
-                                       aria-describedby="phosphorus-help"
-                                       required>
-                                <div class="form-text" id="phosphorus-help">
-                                    Optimal range: 20 - 50 ppm (enhances flowering)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-section">
-                    <h2 class="section-title">Soil Composition & Environmental Factors</h2>
-                    
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="input-group" id="organic-matter-container">
-                                <label for="organic-matter" class="form-label">Organic Matter (%)</label>
-                                <input type="number" 
-                                       id="organic-matter" 
-                                       class="form-control" 
-                                       min="0" 
-                                       max="100" 
-                                       step="0.1" 
-                                       placeholder="3.5"
-                                       aria-describedby="organic-matter-help"
-                                       required>
-                                <div class="form-text" id="organic-matter-help">
-                                    Optimal range: 3 - 6% (improves soil structure and fertility)
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6">
-                            <div class="input-group" id="soil-moisture-container">
-                                <label for="soil-moisture" class="form-label">Soil Moisture (%)</label>
-                                <input type="number" 
-                                       id="soil-moisture" 
-                                       class="form-control" 
-                                       min="0" 
-                                       max="100" 
-                                       step="0.1" 
-                                       placeholder="25"
-                                       aria-describedby="soil-moisture-help"
-                                       required>
-                                <div class="form-text" id="soil-moisture-help">
-                                    Optimal range: 20 - 40% (adequate water availability)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="input-group" id="rainfall-container">
-                                <label for="rainfall" class="form-label">Annual Rainfall (mm)</label>
-                                <input type="number" 
-                                       id="rainfall" 
-                                       class="form-control" 
-                                       min="0" 
-                                       max="5000" 
-                                       step="1" 
-                                       placeholder="800"
-                                       aria-describedby="rainfall-help"
-                                       required>
-                                <div class="form-text" id="rainfall-help">
-                                    Optimal range: 600 - 1200 mm (sufficient natural irrigation)
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6">
-                            <div class="input-group" id="tree-age-container">
-                                <label for="tree-age" class="form-label">Tree Age (years)</label>
-                                <input type="number" 
-                                       id="tree-age" 
-                                       class="form-control" 
-                                       min="0" 
-                                       max="200" 
-                                       step="1" 
-                                       placeholder="5"
-                                       aria-describedby="tree-age-help"
-                                       required>
-                                <div class="form-text" id="tree-age-help">
-                                    Age affects nutrient requirements and soil depletion patterns
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center">
-                    <button type="submit" class="btn-analyze">
-                        <span class="button-text">Analyze Comprehensive Soil Health</span>
-                    </button>
-                </div>
-            </form>
-
-            <div class="result-container" aria-live="polite">
-                <h3 id="result"></h3>
-                <p class="result-details" id="result-details"></p>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="nav-icon">🌱</span>
+                <span class="nav-title">Soil Health Analyzer</span>
             </div>
-        </main>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="analyzer.html" class="nav-link">Analyzer</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="hero-icon">🌱</span>
+                    Professional Soil Health Analysis
+                </h1>
+                <p class="hero-subtitle">
+                    Unlock the secrets of your soil with comprehensive testing and expert recommendations for optimal plant growth
+                </p>
+                <a href="analyzer.html" class="cta-button">
+                    Start Analysis
+                    <span class="button-arrow">→</span>
+                </a>
+            </div>
+        </div>
     </div>
 
-    <script src="app.js"></script>
+    <div class="content-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-card">
+                    <div class="card-icon">🔬</div>
+                    <h2>Comprehensive Soil Testing</h2>
+                    <p>
+                        Our advanced soil health analyzer evaluates eight critical parameters that determine your soil's fertility and growing potential. From essential nutrients like nitrogen, phosphorus, and potassium to environmental factors such as organic matter content, moisture levels, and rainfall patterns, we provide a complete picture of your soil ecosystem. The tool also considers tree age and specific growth stages to deliver personalized recommendations tailored to your plants' current needs.
+                    </p>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-icon">📊</div>
+                    <h2>Expert Analysis & Recommendations</h2>
+                    <p>
+                        Get professional-grade insights with our intelligent scoring system that rates your soil health from Poor to Excellent. Our analyzer doesn't just identify problems—it provides specific, actionable solutions. Whether your soil needs lime to adjust pH, compost to boost organic matter, or improved drainage for moisture control, you'll receive detailed recommendations including fertilizer types, amendment quantities, and timing suggestions. Each analysis considers your local environmental conditions to ensure practical, effective solutions.
+                    </p>
+                </div>
+
+                <div class="content-card">
+                    <div class="card-icon">🌿</div>
+                    <h2>Optimize Plant Growth & Yield</h2>
+                    <p>
+                        Transform your gardening or farming success with data-driven soil management. Our analyzer helps you create the ideal growing environment by identifying nutrient deficiencies, moisture imbalances, and pH issues before they impact plant health. By following our recommendations, you can expect improved root development, enhanced flowering and fruiting, better disease resistance, and significantly higher yields. Whether you're growing vegetables, fruits, ornamental plants, or managing agricultural crops, healthy soil is the foundation of thriving plants.
+                    </p>
+                </div>
+            </div>
+
+            <div class="features-section">
+                <h2 class="features-title">What You'll Get</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">⚗️</span>
+                        <span class="feature-text">pH Level Analysis</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🧪</span>
+                        <span class="feature-text">NPK Nutrient Assessment</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🍂</span>
+                        <span class="feature-text">Organic Matter Evaluation</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">💧</span>
+                        <span class="feature-text">Moisture & Drainage Analysis</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🌧️</span>
+                        <span class="feature-text">Climate Factor Assessment</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🌳</span>
+                        <span class="feature-text">Age-Specific Recommendations</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>Ready to Improve Your Soil Health?</h2>
+                <p>Start your comprehensive soil analysis now and discover what your plants need to thrive.</p>
+                <a href="analyzer.html" class="cta-button secondary">
+                    Begin Analysis
+                    <span class="button-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Soil Health Analyzer. Helping plants thrive through better soil management.</p>
+        </div>
+    </footer>
 </body>
 </html>
